@@ -8,122 +8,22 @@
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@500&family=Inter&display=swap" rel="stylesheet">
 
 <style>
-  body {
-    margin: 0;
-    font-family: 'Inter', sans-serif;
-    background: linear-gradient(to right, #fdf6ec, #f8ecd9);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-  }
-
-  .card {
-    background: white;
-    padding: 40px;
-    border-radius: 20px;
-    width: 350px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-    text-align: center;
-    border: 1px solid #f1e3c6;
-  }
-
-  h1 {
-    font-family: 'Playfair Display', serif;
-    color: #b8962e;
-    margin-bottom: 5px;
-    letter-spacing: 2px;
-  }
-
-  .subtitle {
-    font-size: 12px;
-    letter-spacing: 2px;
-    color: #c9a74e;
-    margin-bottom: 25px;
-  }
-
-  label {
-    display: block;
-    text-align: left;
-    font-size: 12px;
-    margin-top: 15px;
-    color: #6b5b3e;
-    font-weight: 600;
-  }
-
-  input, textarea {
-    width: 92%;
-    padding: 12px;
-    margin-top: 6px;
-    border-radius: 10px;
-    border: 1px solid #e8d9b5;
-    background: #fff;
-    outline: none;
-  }
-
-  input:focus, textarea:focus {
-    border-color: #d4af37;
-  }
-
-  textarea {
-    resize: none;
-    height: 80px;
-  }
-
-  button {
-    margin-top: 25px;
-    width: 100%;
-    padding: 14px;
-    border-radius: 12px;
-    border: none;
-    background: linear-gradient(135deg, #d4af37, #b8962e);
-    color: white;
-    font-weight: bold;
-    letter-spacing: 1px;
-    cursor: pointer;
-  }
-
-  button:hover {
-    opacity: 0.9;
-  }
-
-  /* Wedding footer */
-.footer {
-  margin-top: 35px;
-  text-align: center;
-}
-
-.names {
-  font-family: 'Great Vibes', cursive;
-  font-size: 48px;
-  color: #a67c00; /* deeper gold */
-  font-weight: bold;
-  letter-spacing: 1px;
-}
-
-.names span {
-  font-size: 28px;
-  margin: 0 10px;
-  color: #444;
-}
-
-.message {
-  font-size: 15px;
-  color: #5a4a2f;
-  margin-top: 10px;
-  line-height: 1.6;
-}
-
-
-body {
+ /* ================= Global Reset & Box Sizing ================= */
+* {
+  box-sizing: border-box;
   margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  overflow-x: hidden; /* Prevent horizontal scroll on mobile */
   font-family: 'Inter', sans-serif;
   background: linear-gradient(to bottom, #fdf6ec, #f8ecd9);
   padding: 20px;
 }
 
-/* Card */
+/* ================= Card Container ================= */
 .card {
   background: white;
   padding: 25px;
@@ -133,52 +33,61 @@ body {
   margin: auto;
   box-shadow: 0 10px 30px rgba(0,0,0,0.1);
   border: 1px solid #f1e3c6;
+  text-align: center;
 }
 
-/* Title */
+/* ================= Title ================= */
 h1 {
   font-family: 'Playfair Display', serif;
   color: #b8962e;
   text-align: center;
   margin-bottom: 5px;
+  letter-spacing: 2px;
+  font-size: 24px;
 }
 
-/* Event details */
-.event-details {
+/* ================= Subtitle / Event Details ================= */
+.subtitle, .event-details {
   font-size: 13px;
   color: #6b5b3e;
   margin-top: 10px;
   margin-bottom: 20px;
-  line-height: 1.7;
+  line-height: 1.6;
   text-align: center;
 }
 
-/* Labels */
+/* ================= Labels ================= */
 label {
   display: block;
   font-size: 13px;
   margin-top: 15px;
   color: #6b5b3e;
   font-weight: 600;
+  text-align: left;
 }
 
-/* Inputs */
+/* ================= Inputs & Textarea ================= */
 input, textarea {
-  width: 100%;
+  width: 100%; /* Full width, avoids overflow */
   padding: 14px;
   margin-top: 6px;
   border-radius: 12px;
   border: 1px solid #e8d9b5;
   font-size: 14px;
-  box-sizing: border-box;
+  outline: none;
+  background: #fff;
 }
 
-/* Focus */
 input:focus, textarea:focus {
   border-color: #d4af37;
 }
 
-/* Button */
+textarea {
+  resize: none;
+  height: 80px;
+}
+
+/* ================= Button ================= */
 button {
   margin-top: 20px;
   width: 100%;
@@ -189,9 +98,14 @@ button {
   color: white;
   font-weight: bold;
   font-size: 15px;
+  cursor: pointer;
 }
 
-/* Footer */
+button:hover {
+  opacity: 0.9;
+}
+
+/* ================= Footer ================= */
 .footer {
   margin-top: 30px;
   text-align: center;
@@ -201,6 +115,8 @@ button {
   font-family: 'Great Vibes', cursive;
   font-size: 42px;
   color: #a67c00;
+  font-weight: bold;
+  letter-spacing: 1px;
 }
 
 .names span {
@@ -216,21 +132,53 @@ button {
   line-height: 1.6;
 }
 
-/* 📱 Extra mobile tuning */
+/* ================= Responsive: Mobile Devices ================= */
 @media (max-width: 480px) {
   .card {
     padding: 20px;
   }
 
   h1 {
-    font-size: 22px;
+    font-size: 20px;
+  }
+
+  input, textarea, button {
+    font-size: 14px;
+    padding: 12px;
   }
 
   .names {
     font-size: 36px;
   }
+
+  .names span {
+    font-size: 24px;
+  }
 }
 
+/* ================= Responsive: Larger Phones / iPhone 10-16 ================= */
+@media (max-width: 428px) { /* Covers iPhone 12/14 Pro Max width */
+  .card {
+    padding: 18px;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
+  input, textarea, button {
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  .names {
+    font-size: 38px;
+  }
+
+  .names span {
+    font-size: 24px;
+  }
+}
 </style>
 </head>
 

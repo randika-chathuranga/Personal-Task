@@ -8,175 +8,138 @@
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@500&family=Inter&display=swap" rel="stylesheet">
 
 <style>
- /* ================= Global Reset & Box Sizing ================= */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
 }
 
-html, body {
-  width: 100%;
-  overflow-x: hidden; /* Prevent horizontal scroll on mobile */
-  font-family: 'Inter', sans-serif;
-  background: linear-gradient(to bottom, #fdf6ec);
-  padding: 20px;
+html,body{
+  width:100%;
+  overflow-x:hidden;
+  font-family:'Inter',sans-serif;
+  background:linear-gradient(to bottom,#fdf6ec);
+  padding:20px;
 }
 
-/* ================= Card Container ================= */
-.card {
-  background: white;
-  padding: 25px;
-  border-radius: 20px;
-  width: 100%;
-  max-width: 400px;
-  margin: auto;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-  border: 1px solid #f1e3c6;
-  text-align: center;
+.card{
+  background:white;
+  padding:25px;
+  border-radius:20px;
+  width:100%;
+  max-width:400px;
+  margin:auto;
+  box-shadow:0 10px 30px rgba(0,0,0,0.1);
+  border:1px solid #f1e3c6;
+  text-align:center;
 }
 
-/* ================= Title ================= */
-h1 {
-  font-family: 'Playfair Display', serif;
-  color: #b8962e;
-  text-align: center;
-  margin-bottom: 5px;
-  letter-spacing: 2px;
-  font-size: 24px;
+h1{
+  font-family:'Playfair Display',serif;
+  color:#b8962e;
+  margin-bottom:5px;
+  letter-spacing:2px;
+  font-size:24px;
 }
 
-/* ================= Subtitle / Event Details ================= */
-.subtitle, .event-details {
-  font-size: 13px;
-  color: #6b5b3e;
-  margin-top: 10px;
-  margin-bottom: 20px;
-  line-height: 1.6;
-  text-align: center;
+label{
+  display:block;
+  font-size:13px;
+  margin-top:15px;
+  color:#6b5b3e;
+  font-weight:600;
+  text-align:left;
 }
 
-/* ================= Labels ================= */
-label {
-  display: block;
-  font-size: 13px;
-  margin-top: 15px;
-  color: #6b5b3e;
-  font-weight: 600;
-  text-align: left;
+input,textarea{
+  width:100%;
+  padding:14px;
+  margin-top:6px;
+  border-radius:12px;
+  border:1px solid #e8d9b5;
+  font-size:14px;
+  outline:none;
+  background:#fff;
 }
 
-/* ================= Inputs & Textarea ================= */
-input, textarea {
-  width: 100%; /* Full width, avoids overflow */
-  padding: 14px;
-  margin-top: 6px;
-  border-radius: 12px;
-  border: 1px solid #e8d9b5;
-  font-size: 14px;
-  outline: none;
-  background: #fff;
+input:focus,textarea:focus{
+  border-color:#d4af37;
 }
 
-input:focus, textarea:focus {
-  border-color: #d4af37;
+textarea{
+  resize:none;
+  height:80px;
 }
 
-textarea {
-  resize: none;
-  height: 80px;
+button{
+  margin-top:20px;
+  width:100%;
+  padding:16px;
+  border-radius:12px;
+  border:none;
+  background:linear-gradient(135deg,#d4af37,#b8962e);
+  color:white;
+  font-weight:bold;
+  font-size:15px;
+  cursor:pointer;
 }
 
-/* ================= Button ================= */
-button {
-  margin-top: 20px;
-  width: 100%;
-  padding: 16px;
-  border-radius: 12px;
-  border: none;
-  background: linear-gradient(135deg, #d4af37, #b8962e);
-  color: white;
-  font-weight: bold;
-  font-size: 15px;
-  cursor: pointer;
+button:hover{
+  opacity:0.9;
 }
 
-button:hover {
-  opacity: 0.9;
+.footer{
+  margin-top:20px;
+  text-align:center;
 }
 
-/* ================= Footer ================= */
-.footer {
-  margin-top: 30px;
-  text-align: center;
+.message{
+  font-size:14px;
+  color:#5a4a2f;
+  margin-top:8px;
+  line-height:1.6;
 }
 
-.names {
-  font-family: 'Great Vibes', cursive;
-  font-size: 42px;
-  color: #a67c00;
-  font-weight: bold;
-  letter-spacing: 1px;
+.option-group{
+  margin-top:20px;
+  text-align:left;
 }
 
-.names span {
-  font-size: 26px;
-  margin: 0 8px;
-  color: #444;
+.option-row{
+  display:flex;
+  gap:20px;
+  margin-top:10px;
 }
 
-.message {
-  font-size: 14px;
-  color: #5a4a2f;
-  margin-top: 8px;
-  line-height: 1.6;
+.option-row label{
+  margin-top:0;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  font-weight:500;
 }
 
-/* ================= Responsive: Mobile Devices ================= */
-@media (max-width: 480px) {
-  .card {
-    padding: 20px;
+.option-row input{
+  width:auto;
+  margin:0;
+}
+
+#guestFields{
+  display:none;
+}
+
+@media (max-width:480px){
+  .card{
+    padding:20px;
   }
 
-  h1 {
-    font-size: 20px;
+  h1{
+    font-size:20px;
   }
 
-  input, textarea, button {
-    font-size: 14px;
-    padding: 12px;
-  }
-
-  .names {
-    font-size: 36px;
-  }
-
-  .names span {
-    font-size: 24px;
-  }
-}
-
-/* ================= Responsive: Larger Phones / iPhone 10-16 ================= */
-@media (max-width: 428px) { /* Covers iPhone 12/14 Pro Max width */
-  .card {
-    padding: 18px;
-  }
-
-  h1 {
-    font-size: 22px;
-  }
-
-  input, textarea, button {
-    font-size: 14px;
-    padding: 12px;
-  }
-
-  .names {
-    font-size: 38px;
-  }
-
-  .names span {
-    font-size: 24px;
+  input,textarea,button{
+    font-size:14px;
+    padding:12px;
   }
 }
 </style>
@@ -185,33 +148,69 @@ button:hover {
 <body>
 
 <div class="card">
-  <h1>RSVP</h1>
+<h1>RSVP</h1>
 
-  <!-- Wedding Names Section -->
-    <div class="footer">
-      <!-- <div class="names">Randika & Wathsala</div> -->
-      <div class="message">
-        Together with our families, we warmly invite you to celebrate our special day.<br>
-      </div>
+<div class="footer">
+  <div class="message">
+    Together with our families, we warmly invite you to celebrate our special day.
+  </div>
+</div>
+
+<form action="https://formspree.io/f/xbdzboqp" method="POST">
+
+  <!-- Joining Question -->
+  <div class="option-group">
+    <label>Are you joining with us?</label>
+
+    <div class="option-row">
+      <label>
+        <input type="radio" name="joining" value="Yes" onclick="toggleFields(true)" required>
+        Yes
+      </label>
+
+      <label>
+        <input type="radio" name="joining" value="No" onclick="toggleFields(false)">
+        No
+      </label>
     </div>
+  </div>
 
-  <form action="https://formspree.io/f/xbdzboqp" method="POST">
+  <!-- Hidden Fields -->
+  <div id="guestFields">
 
     <label>Guest Name</label>
-    <input type="text" name="guest_name" placeholder="Your Name" required>
+    <input type="text" name="guest_name" placeholder="Your Name">
 
     <label>Number of Guests</label>
-    <input type="number" name="guests" placeholder="Guest Count" required>
+    <input type="number" name="guests" placeholder="Guest Count">
 
     <label>Remarks (Optional)</label>
     <textarea name="remarks" placeholder="Share anything you'd like us to know..."></textarea>
 
-    <button type="submit">Submit</button>
+  </div>
 
-  </form>
+  <button type="submit">Submit</button>
+
+</form>
 </div>
 
+<script>
+function toggleFields(show){
+  const fields = document.getElementById("guestFields");
+  const guestName = document.querySelector('input[name="guest_name"]');
+  const guests = document.querySelector('input[name="guests"]');
 
+  if(show){
+    fields.style.display = "block";
+    guestName.required = true;
+    guests.required = true;
+  }else{
+    fields.style.display = "none";
+    guestName.required = false;
+    guests.required = false;
+  }
+}
+</script>
 
 </body>
 </html>
